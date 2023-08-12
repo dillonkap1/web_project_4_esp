@@ -1,0 +1,118 @@
+.popup{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 40%);
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.popup_opened{
+    display: block;
+}
+
+.popup__container{
+  margin: 200px auto;
+  width: 430px;
+  height: 330px;
+  background-color: #fff;
+  border-radius: 20px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  }
+
+  .popup__container-texts{
+    display: flex;
+    gap: 45px;
+    flex-direction: column;
+    border: none;
+    color: black;
+  }
+
+  .popup__container-title{
+    margin: 0px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: normal;
+    border: none;
+    padding-top: 22px;
+  }
+
+  .popup__container-input{
+    border: none;
+    border-bottom: 1px solid;
+    color: #C4C4C4;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  .popup__button-close{
+    cursor: pointer;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: -40px;
+      top: -20px;
+      background-color: #000;
+      border: none;
+  }
+  
+  .popup__button{
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 62px;
+    color: #fff;
+  }
+
+  .save__button{
+    height: 50px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+  }
+  .popup__container-img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  #img-card-popup{
+    border-radius: 20px;
+    width: 100%;
+    height: 420px;
+    position: relative;
+    bottom: 20px;
+  }
+  
+  @media screen and (max-width : 640px) {
+    #img-card-popup{
+      border-radius: 20px;
+      height: 322px;
+    }
+
+    .popup__container{
+      width: 282px;
+      height: 322px;
+    }
+    
+    .popup__container-img{
+      height: 100%;
+    }
+
+    .popup__button-close{
+      left: 210px;
+      bottom: 240px;
+    }
+  }
