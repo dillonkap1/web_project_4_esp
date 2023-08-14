@@ -7,14 +7,17 @@
     top: 0;
     left: 0;
     z-index: 3;
+
 }
 
 .popup_opened{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .popup__container{
-  margin: 200px auto;
+  margin:auto;
   width: 430px;
   height: 330px;
   background-color: #fff;
@@ -97,6 +100,19 @@
     position: relative;
     bottom: 20px;
   }
+
+  .popup__container_images{
+    margin:auto;
+    width: 430px;
+    height: 330px;
+    background-color: transparent;
+    border-radius: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+  }
   
   @media screen and (max-width : 640px) {
     #img-card-popup{
@@ -114,7 +130,7 @@
     }
 
     .popup__button-close{
-      right: 21px;
-      top: -73px;
+      right: 15px;
+      top: -61px;
     }
   }

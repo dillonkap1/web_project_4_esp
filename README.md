@@ -1,16 +1,20 @@
 # Proyecto 5: Alrededor de los Estados Unidos
 
-### Descripción general
+Una web sencilla que muestra imagenes de algunos lugares de Estados Unidos.
 
-* Figma
-* Imágenes
+### Descripción 
+La pagina contiene:
 
-**Figma**
+* Un encabezado
+* Apartado de perfil donde se muestra la foto de perfil, nombre y descripcion del usuario. Además de esto, 2 botones uno para editar el perfil y otro para agregar una nueva foto.
+* La sección de elementos que muestra tarjetas de las imagenes. Cada una tiene un botón de like y otro de eliminación de imagen.
+* Finalmente los popUps, que se desplegan de los botones de editar perfil y añadir una imagen, también al momento de previsualizar una imagen
 
-* [Enlace al proyecto en Figma](https://www.figma.com/file/LDMgqWesKpQkIwhOfEBuTS/WEB%2C-Sprint-5%3A-Around-The-U.S.-%7C-desktop-%2B-mobile?node-id=0%3A1)
+### Funcionalidad
 
-**Imágenes**
+El script proporciona las siguientes características:
 
-A la hora de trabajar, debes optar por exportar las imágenes directamente desde Figma; te recomendamos hacerlo para practicar más. No olvides optimizarlas [aquí](https://tinypng.com/), para que tu proyecto cargue más rápido. 
-
-¡Esperamos que te diviertas con JavaScript!
+* Abrir y cerrar popups para editar perfil y agregar nuevas imágenes
+* Cambiar información del perfil
+* Permite dar like a las fotos
+* Ampliar las imágenes a un popup
