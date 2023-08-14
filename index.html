@@ -1,130 +1,115 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/pages/styles.css">
-    <title>Around The US</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/pages/index.css">
+  <title>Around The US</title>
 </head>
 <body>
-
-    <div class="page">
-        
-
-        <header class="header">
-           <img class="logo__header" src="/images/logo.svg"> 
-           <div class="line__header"></div>
-        </header>
-
-        <main class="content">
-        <div class="profile">
-            <div class="profile__avatar">
-                <img class="profile__avatar-image" src="/images/avatar_profile.png" alt="Foto de perfil">
-            </div>
-            <div class="profile__info">
-                <h2 class="profile__info-name">Jacques Cousteau</h2>
-                <h3 class="profile__info-text">Explorador</h3>
-            </div>
-            <button class="button__edit"></button>
-            <button class="button__add"></button>
-
-            
-            <div class="popup popup__edit">
-                <form class="popup__container">
-                    <fieldset class="popup__container-texts">
-                        <h3 class="popup__container-title">Editar perfil</h3>
-                        <input type="text" placeholder="Nombre" class="popup__container-input-name" id="title">
-                        <input type="text" placeholder="Acerca de mi" class="popup__container-input-text" id="subtitle">
-                        <button class="popup__button-close"><img src="/images/Close Icon.svg"></button>
-                    </fieldset>
-                    <fieldset class="popup__button">
-                        <button type="submit" class="save__button">Guardar</button>
-                    </fieldset>
-                </form>
-            </div>
-
-            <div class="popup popup__add">
-                <form class="popup__container">
-                    <fieldset class="popup__container-texts">
-                        <h3 class="popup__container-title">Nuevo Lugar</h3>
-                        <input type="text" placeholder="Título" class="popup__container-input">
-                        <input type="text" placeholder="Enlace de la imagen" class="popup__container-input">
-                        <button class="popup__button-close"><img src="/images/Close Icon.svg"</button>
-                    </fieldset>
-                    <fieldset class="popup__button">
-                        <button type="submit" class="save__button">Crear</button>
-                    </fieldset>
-                </form>
-            </div>
-            
-
+  <div class="page">
+    <header class="header">
+      <img class="logo__header" src="/images/logo.svg" alt="logo de la pagina"> 
+      <div class="line__header"></div>
+    </header>
+    <main class="content">
+      <div class="profile">
+        <div class="profile__avatar">
+          <img class="profile__avatar-image" src="/images/avatar_profile.png" alt="Foto de perfil">
+        </div>
+        <div class="profile__info">
+          <h2 class="profile__info-name">Jacques Cousteau</h2>
+          <h3 class="profile__info-text">Explorador</h3>
+        </div>
+        <button class="button__edit"></button>
+        <button class="button__add"></button>
+        <div class="popup popup__edit">
+          <form class="popup__container">
+            <fieldset class="popup__container-texts">
+              <h3 class="popup__container-title">Editar perfil</h3>
+              <input type="text" placeholder="Nombre" class="popup__container-input-name" id="title">
+              <input type="text" placeholder="Acerca de mi" class="popup__container-input-text" id="subtitle">
+              <button class="popup__button-close"><img src="/images/Close_Icon.svg" alt="boton de cerrar"></button>
+            </fieldset>
+            <fieldset class="popup__button">
+              <button type="submit" class="save__button">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
+        <div class="popup popup__add">
+          <form class="popup__container">
+            <fieldset class="popup__container-texts">
+              <h3 class="popup__container-title">Nuevo Lugar</h3>
+              <input type="text" placeholder="Título" class="popup__container-input">
+              <input type="text" placeholder="Enlace de la imagen" class="popup__container-input">
+              <button class="popup__button-close"><img src="/images/Close_Icon.svg" alt="boton de cerrar"></button> 
+            </fieldset>
+            <fieldset class="popup__button">
+              <button type="submit" class="save__button">Crear</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+      <section class="elements">
+        <div class="elements__card">
+            <img class="card__image" src="/images/valleYosemite.png" alt="Imagen de Valle de Yosemite">
+            <h3 class="card__title">Valle de Yosemite</h3>
+            <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
+            <img class="card__like" src="/images/Group.svg" alt="icono de like">
+            <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
+        </div>
+        <div class="elements__card">
+            <img class="card__image" src="/images/lagoLouise.png" alt="Imagen de Lago Louise">
+            <h3 class="card__title">Lago Louise</h3>
+            <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
+            <img class="card__like" src="/images/Group.svg" alt="icono de like">
+            <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
 
         </div>
-
-
-
-        <section class="elements">
-            <div class="elements__card">
-                <img class="card__image" src="/images/valleYosemite.png" alt="Imagen de Valle de Yosemite">
-                <h3 class="card__title">Valle de Yosemite</h3>
-                <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
-                <img class="card__like" src="/images/Group.svg" alt="icono de like">
-                <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
-            </div>
-            <div class="elements__card">
-                <img class="card__image" src="/images/lagoLouise.png" alt="Imagen de Lago Louise">
-                <h3 class="card__title">Lago Louise</h3>
-                <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
-                <img class="card__like" src="/images/Group.svg" alt="icono de like">
-                <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
-
-            </div>
-            <div class="elements__card">
-                <img class="card__image" src="/images/montañasCalvas.png" alt="Imagen de Montañas Calvas">
-                <h3 class="card__title">Montañas Calvas</h3>
-                <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
-                <img class="card__like" src="/images/Group.svg" alt="icono de like">
-                <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
-            </div>
-            <div class="elements__card">
-                <img class="card__image" src="/images/chicago.jpg" alt="Imagen de Chicago">
-                <h3 class="card__title">Chicago</h3>
-                <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
-                <img class="card__like" src="/images/Group.svg" alt="icono de like">
-                <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
-            </div>
-            <div class="elements__card">
-                <img class="card__image" src="/images/new york.jpg" alt="Imagen de New York">
-                <h3 class="card__title">New York</h3>
-                <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
-                <img class="card__like" src="/images/Group.svg" alt="icono de like">
-                <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
-            </div>
-            <div class="elements__card">
-                <img class="card__image" src="/images/Washington.jpg" alt="Imagen de Washington">
-                <h3 class="card__title">Washington</h3>
-                <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
-                <img class="card__like" src="/images/Group.svg" alt="icono de like">
-                <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
-            </div>
-        </section>
-
-        <div class="popup popup_preview_images">
-            <div class="popup__container">
-              <button class="popup__button-close popup__container-btn-closed_images">
-                <img src="/images/Close Icon.svg" alt="cerrar">
-              </button>
-              <div class="popup__container-img">
-                <img id="img-card-popup">
-              </div>
+        <div class="elements__card">
+            <img class="card__image" src="/images/montañasCalvas.png" alt="Imagen de Montañas Calvas">
+            <h3 class="card__title">Montañas Calvas</h3>
+            <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
+            <img class="card__like" src="/images/Group.svg" alt="icono de like">
+            <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
+        </div>
+        <div class="elements__card">
+            <img class="card__image" src="/images/chicago.jpg" alt="Imagen de Chicago">
+            <h3 class="card__title">Chicago</h3>
+            <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
+            <img class="card__like" src="/images/Group.svg" alt="icono de like">
+            <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
+        </div>
+        <div class="elements__card">
+            <img class="card__image" src="/images/newyork.jpg" alt="Imagen de New York">
+            <h3 class="card__title">New York</h3>
+            <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
+            <img class="card__like" src="/images/Group.svg" alt="icono de like">
+            <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
+        </div>
+        <div class="elements__card">
+            <img class="card__image" src="/images/Washington.jpg" alt="Imagen de Washington">
+            <h3 class="card__title">Washington</h3>
+            <img class="card__delete" src="/images/Trash.svg" alt="icono de eliminar imagen">
+            <img class="card__like" src="/images/Group.svg" alt="icono de like">
+            <img class="card__like card__like-dark" src="/images/Union.svg" alt="icono de like pulsado">
+        </div>
+      </section>
+      <div class="popup popup_preview_images">
+        <div class="popup__container">
+            <button class="popup__button-close popup__container-btn-closed_images">
+              <img src="/images/Close_Icon.svg" alt="cerrar">
+            </button>
+            <div class="popup__container-img">
+              <img id="img-card-popup" alt="imagen de la tarjeta">
             </div>
           </div>
-
-        <footer class="footer">
-            <p class="footer__copyright">© 2023 David J</p>
-        </footer>
-    </div>
-</main>
-<script src="scripts.js"></script>
+      </div>
+      <footer class="footer">
+        <p class="footer__copyright">© 2023 David J</p>
+      </footer>
+    </main>
+  </div>
+  <script src="scripts.js"></script>
 </body>
 </html>

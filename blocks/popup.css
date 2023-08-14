@@ -18,11 +18,13 @@
   width: 430px;
   height: 330px;
   background-color: #fff;
-  border-radius: 20px;
+  border-radius: 10px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  position: relative;
+  padding: 36px;
   }
 
   .popup__container-texts{
@@ -63,7 +65,7 @@
       position: absolute;
       right: -40px;
       top: -20px;
-      background-color: #000;
+      background-color: transparent;
       border: none;
   }
   
@@ -112,7 +114,7 @@
     }
 
     .popup__button-close{
-      left: 210px;
-      bottom: 240px;
+      right: 21px;
+      top: -73px;
     }
   }
