@@ -18,3 +18,5 @@ El script proporciona las siguientes características:
 * Cambiar información del perfil
 * Permite dar like a las fotos
 * Ampliar las imágenes a un popup
+
+_Proyecto despegado en Netlify:_ https://dazzling-cactus-75d950.netlify.app/
