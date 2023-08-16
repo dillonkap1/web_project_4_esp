@@ -3,14 +3,14 @@
     width: 100%;
 }
 
-.line__header {
+.header__line {
     width: 100%;
     padding-top: 42px;
     color: #525252;
     border-bottom: solid 1px;
   }
 
-.logo__header{
+.header__logo{
     padding-top: 45px;
 
 }

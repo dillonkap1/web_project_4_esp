@@ -1,5 +1,5 @@
-const buttonEdit = document.querySelector(".button__edit");
-const buttonAdd = document.querySelector(".button__add");
+const buttonEdit = document.querySelector(".profile__button-edit");
+const buttonAdd = document.querySelector(".profile__button-add");
 const buttonClose = document.querySelector(".popup__button-close");
 const buttonCloseImages = document.querySelector(".popup__button-close");
 
@@ -7,13 +7,13 @@ const likeIcon = document.querySelectorAll(".card__like");
 const likeIconDark = document.querySelectorAll(".card__like-dark");
 const title = document.querySelector(".profile__info-name");
 const subtitle =document.querySelector(".profile__info-text");
-let nameInput = document.querySelector(".popup__container-input-name");
-let textInput = document.querySelector(".popup__container-input-text");
-const popupProfile = document.querySelector(".popup__edit");
-const saveButton = document.querySelector(".save__button");
+let nameInput = document.querySelector(".popup__input-name");
+let textInput = document.querySelector(".popup__input-text");
+const popupProfile = document.querySelector(".popup-edit");
+const saveButton = document.querySelector(".popup__button-save");
 const cardImage = document.querySelectorAll(".card__image");
-const buttonCloseCard = document.querySelector(".popup__container-btn-closed_images")
-const popupFormImage = document.querySelector(".popup__add");
+const buttonCloseCard = document.querySelector(".popup__button-close-images")
+const popupFormImage = document.querySelector(".popup-add");
 
 
 likeIcon.forEach((like) => {
@@ -45,8 +45,8 @@ function openPopupProfile(){
     textInput.value = subtitle.textContent;
 }
 
-function closePopupProfile(){
-    const buttonClose = document.querySelector(".popup__edit");
+function closePopupProfile(e){
+    e.preventDefault();
     popupProfile.classList.remove("popup_opened");
 }
 
@@ -59,7 +59,7 @@ function closePopupImage(){
     popupFormImage.classList.remove("popup_opened");
 }
 
-function buttonProfileSubmit(e){
+function submitButtonProfile(e){
     e.preventDefault(); 
     
     title.textContent = nameInput.value;
@@ -71,7 +71,7 @@ buttonEdit.addEventListener("click", openPopupProfile);
 buttonAdd.addEventListener("click", openPopupImage)
 buttonClose.addEventListener("click", closePopupProfile);
 buttonCloseImages.addEventListener("click", closePopupImage);
-saveButton.addEventListener("click", buttonProfileSubmit);
+saveButton.addEventListener("click", submitButtonProfile);
 buttonCloseCard.addEventListener("click", closePopupPreviewImage);
 
 
