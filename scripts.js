@@ -5,8 +5,8 @@ const buttonCloseImages = document.querySelector(".popup__button-close");
 
 const likeIcon = document.querySelectorAll(".card__like");
 const likeIconDark = document.querySelectorAll(".card__like-dark");
-const title = document.querySelector(".profile__info-name");
-const subtitle =document.querySelector(".profile__info-text");
+const title = document.querySelector(".profile__name");
+const subtitle =document.querySelector(".profile__text");
 let nameInput = document.querySelector(".popup__input-name");
 let textInput = document.querySelector(".popup__input-text");
 const popupProfile = document.querySelector(".popup-edit");
@@ -55,7 +55,6 @@ function openPopupImage(){
 }
 
 function closePopupImage(){
-    const buttonCloseImages = document.querySelector(".popup");
     popupFormImage.classList.remove("popup_opened");
 }
 
