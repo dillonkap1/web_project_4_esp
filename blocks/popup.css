@@ -113,7 +113,7 @@
   #title-card-popup{
     color: white;
     size: 12px;
-    margin:0
+    margin:0;
     }
 
   .popup__container-images{
@@ -129,7 +129,7 @@
     position: relative;
   }
   
-  @media screen and (max-width : 640px) {
+  @media screen and (max-width: 640px) {
     #img-card-popup{
       border-radius: 20px;
       height: 322px;

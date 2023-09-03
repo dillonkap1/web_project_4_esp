@@ -33,10 +33,10 @@
     margin: 0;
     font-size: 42px;
     font-weight: 500;
-    white-space: nowrap;     
-    overflow: hidden;       
-    text-overflow: ellipsis; 
-    width: 100%;   
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 .profile__text{
@@ -45,9 +45,9 @@
     font-weight: normal;
     line-height: normal;
     white-space: nowrap;     
-    overflow: hidden;       
-    text-overflow: ellipsis; 
-    width: 100%;   
+    overflow: hidden;    
+    text-overflow: ellipsis;
+    width: 100%;
 }
 
 .profile__button-edit{
@@ -72,7 +72,7 @@
 }
 
 
-@media screen and (max-width : 640px) {
+@media screen and (max-width: 640px) {
     .profile{
         margin: 0 auto;
         display: grid;
@@ -105,7 +105,7 @@
       }
   }
 
-  @media screen and (max-width : 960px) {
+  @media screen and (max-width: 960px) {
     .profile__name{
       font-size: 24px;
     }
