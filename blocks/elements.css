@@ -34,7 +34,7 @@
     top:15px;
     right: 15px;
     width: 18px;
-    height: 20px; 
+    height: 20px;
     cursor: pointer;
 }
 
@@ -43,7 +43,7 @@
     bottom: 30px;
     right: 18px;
     width: 21px;
-    height: 20px; 
+    height: 20px;
     cursor: pointer;
 }
 
@@ -59,7 +59,7 @@
     display: block;
   }
   
-  @media screen and (max-width : 1100px) {
+  @media screen and (max-width: 1100px) {
     .elements{
       display: grid;
       grid-template-columns: auto auto;
@@ -68,7 +68,7 @@
     
   }
   
-  @media screen and (max-width : 640px) {
+  @media screen and (max-width: 640px) {
     .elements{
       display: flex;
       flex-direction: column;
