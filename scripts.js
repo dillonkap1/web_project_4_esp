@@ -6,8 +6,8 @@ const likeIcon = document.querySelectorAll(".card__like");
 const likeIconDark = document.querySelectorAll(".card__like-dark");
 const title = document.querySelector(".profile__name");
 const subtitle =document.querySelector(".profile__text");
-let nameInput = document.querySelector(".popup__input-name");
-let textInput = document.querySelector(".popup__input-text");
+const nameInput = document.querySelector(".popup__input-name");
+const textInput = document.querySelector(".popup__input-text");
 const popupProfile = document.querySelector(".popup-edit");
 const saveButton = document.querySelector(".popup__button-save");
 const cardImage = document.querySelectorAll(".card__image");
@@ -36,6 +36,9 @@ function openPopupImage(){
 
 function closePopupImage(){
     popupFormImage.classList.remove("popup_opened");
+
+    inputName.value = '';
+    inputImageLink.value = '';
 }
 
 function submitButtonProfile(e){
@@ -157,7 +160,7 @@ buttonCloseCard.addEventListener("click", closePopupPreviewImage);
 
   initialCards.forEach(cardData => {
     const cardElement = createCard(cardData);
-    elementContainer.appendChild(cardElement);
+    elementContainer.insertBefore(cardElement, elementContainer.firstChild);
   })
 
   document.addEventListener("click", function(e) {
