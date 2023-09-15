@@ -1,6 +1,6 @@
 const buttonEdit = document.querySelector(".profile__button-edit");
 const buttonAdd = document.querySelector(".profile__button-add");
-const buttonClose = document.querySelectorAll(".popup__button-close");
+const closeButtons = document.querySelectorAll(".popup__button-close");
 
 const likeIcon = document.querySelectorAll(".card__like");
 const likeIconDark = document.querySelectorAll(".card__like-dark");
@@ -14,9 +14,27 @@ const cardImage = document.querySelectorAll(".card__image");
 const buttonCloseCard = document.querySelector(".popup__button-close-images")
 const popupFormImage = document.querySelector(".popup-add");
 
-buttonClose.forEach(e => {
-  e.addEventListener("click", closePopupImage);
-})
+const titleInput = document.querySelector(".popup__input-title");
+const imageUrlInput = document.querySelector(".popup__input-image");
+const createNewPlaceButton = document.querySelector(".popup__button-create");
+
+closeButtons.forEach(button => {
+  button.addEventListener("click", (event) => {
+    const popup = event.target.closest(".popup");
+    closePopup(popup);
+  });
+});
+
+function closePopup(popup) {
+  if (popup.classList.contains("popup-edit")) {
+    closePopupProfile();
+  } else if (popup.classList.contains("popup-add")) {
+    closePopupImage();
+  } else if (popup.classList.contains("popup_preview_images")) {
+    closePopupPreviewImage();
+  }
+}
+
 
 function openPopupProfile(){
     popupProfile.classList.add("popup_opened");
@@ -25,10 +43,10 @@ function openPopupProfile(){
     textInput.value = subtitle.textContent;
 }
 
-function closePopupProfile(e){
-    e.preventDefault();
-    popupProfile.classList.remove("popup_opened");
+function closePopupProfile(){
+  popupProfile.classList.remove("popup_opened");
 }
+
 
 function openPopupImage(){
     popupFormImage.classList.add("popup_opened");
@@ -40,6 +58,7 @@ function closePopupImage(){
     inputName.value = '';
     inputImageLink.value = '';
 }
+
 
 function submitButtonProfile(e){
     e.preventDefault(); 
@@ -162,13 +181,6 @@ buttonCloseCard.addEventListener("click", closePopupPreviewImage);
     const cardElement = createCard(cardData);
     elementContainer.insertBefore(cardElement, elementContainer.firstChild);
   })
-
-  document.addEventListener("click", function(e) {
-    if (e.target.classList.contains("popup")) { 
-        closePopupImage();
-        closePopupProfile(e); 
-    }
-});
 
   const addButton = document.querySelector(".profile__button-add");
   const inputName = document.querySelector(".popup__input-title"); 

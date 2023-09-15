@@ -24,11 +24,13 @@
         <button class="profile__button-edit"></button>
         <button class="profile__button-add"></button>
         <div class="popup popup-edit">
-          <form class="popup__container">
+          <form class="popup__container popup__form">
             <fieldset class="popup__texts">
               <h3 class="popup__title">Editar perfil</h3>
-              <input type="text" placeholder="Nombre" class="popup__input-name" id="title" required>
-              <input type="text" placeholder="Acerca de mi" class="popup__input-text" id="subtitle" required>
+              <input type="text" placeholder="Nombre" class="popup__container-input popup__input-name popup__input" id="title" required minlength="2" maxlength="40">
+              <p id="title-error" class="popup__error"></p>
+              <input type="text" placeholder="Acerca de mi" class="popup__container-input popup__input-text popup__input" id="subtitle" required minlength="2" maxlength="200">
+              <p id="subtitle-error" class="popup__error"></p>
               <button type="button" class="popup__button-close"><img src="/images/Close_Icon.svg" alt="boton de cerrar"></button>
             </fieldset>
             <fieldset class="popup__button-group">
@@ -37,11 +39,13 @@
           </form>
         </div>
         <div class="popup popup-add">
-          <form class="popup__container">
+          <form class="popup__container popup__form">
             <fieldset class="popup__texts">
               <h3 class="popup__title">Nuevo Lugar</h3>
-              <input type="text" placeholder="Título" class="popup__container-input popup__input-title" required>
-              <input type="text" placeholder="Enlace de la imagen" class="popup__container-input popup__input-image" required>
+              <input type="text" placeholder="Título" class="popup__container-input popup__input-title popup__input" id="titleNewPlace" required minlength="2" maxlength="30">
+              <p id="titleNewPlace-error" class="popup__error"></p>
+              <input type="url" placeholder="Enlace de la imagen" class="popup__container-input popup__input-image popup__input" id="imageUrl" required>
+              <p id="imageUrl-error" class="popup__error"></p>
               <button type="button" class="popup__button-close"><img src="/images/Close_Icon.svg" alt="boton de cerrar"></button> 
             </fieldset>
             <fieldset class="popup__button-group">
@@ -72,5 +76,6 @@
     </main>
   </div>
   <script src="scripts.js"></script>
+  <script src="validate.js"></script>
 </body>
 </html>

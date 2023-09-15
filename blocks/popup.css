@@ -39,10 +39,10 @@
 
   .popup__texts{
     display: flex;
-    gap: 45px;
     flex-direction: column;
     border: none;
     color: black;
+    position: relative;
   }
 
   .popup__title{
@@ -51,13 +51,19 @@
     font-weight: bold;
     line-height: normal;
     border: none;
-    padding-top: 22px;
+    padding-bottom: 44px;
   }
+
+  input:focus {
+    outline: none;
+    border-bottom: 2px solid #3498db; /* Esto es solo un ejemplo. Puedes personalizarlo a tu gusto. */
+}
 
   .popup__container-input{
     border: none;
     border-bottom: 1px solid;
-    color: #C4C4C4;
+    border-color: black;
+    color: black;
     font-family: Inter;
     font-size: 14px;
     font-style: normal;
@@ -73,8 +79,8 @@
       width: 40px;
       height: 40px;
       position: absolute;
-      right: -40px;
-      top: -20px;
+      right: -77px;
+      top: -103px;
       background-color: transparent;
       border: none;
   }
@@ -83,7 +89,6 @@
     border: none;
     display: flex;
     justify-content: center;
-    margin-top: 62px;
     color: #fff;
   }
 
@@ -95,6 +100,25 @@
     border: none;
     cursor: pointer;
   }
+
+  .popup__button-save:disabled{
+    background-color: white;
+    border: solid 1px gray;
+    color: gray;
+  }
+
+  .popup__error_visible {
+    color: red;
+    font-size: 12px;
+    visibility:visible;
+  }
+
+  .popup__input_type_error{
+    border: none;
+    border-bottom: 1px solid;
+    border-color: red;
+  }
+
   .popup__img-container{
     position: relative;
     width: 100%;
@@ -145,7 +169,7 @@
     }
 
     .popup__button-close{
-      right: 15px;
-      top: -61px;
+      right: -83px;
+      top: -67px;
     }
   }
