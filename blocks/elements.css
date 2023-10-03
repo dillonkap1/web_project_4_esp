@@ -48,7 +48,7 @@
 }
 
 .card__like-dark{
-    display: none;
+    display: block;
   }
   
   .hide{
