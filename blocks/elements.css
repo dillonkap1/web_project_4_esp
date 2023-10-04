@@ -28,6 +28,10 @@
     border-top-right-radius: 10px;
 }
 
+.card__like:hover, .card__like-dark:hover, .card__delete:hover {
+  opacity: 0.7;
+}
+
 
 .card__delete{
     position: absolute;

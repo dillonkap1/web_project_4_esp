@@ -104,7 +104,10 @@ function closePopupPreviewImage() {
       link : inputImageLink.value
     };
 
-    const cardElement = createCard(cardData);
+    const card = new Card(cardData, '#cardTemplate');
+
+    const cardElement = card.generateCard();
+
     elementContainer.insertBefore(cardElement, elementContainer.firstChild);
 
     closePopupImage();
@@ -125,8 +128,8 @@ function closePopupPreviewImage() {
     inputSelector: ".popup__input",
     submitButtonSelector: ".popup__button-save, .popup__button-create",
     inactiveButtonClass: "popup__button_disabled",
-    inputErrorClass: "popup__input_type_error",
-    errorClass: "popup__error_visible"
+    inputErrorClass: "popup__input-type-error",
+    errorClass: "popup__error-visible"
   };
   
   const editProfileFormValidator = new FormValidator(formValidationSettings, document.querySelector(".popup-edit form"));
