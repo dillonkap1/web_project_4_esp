@@ -1,0 +1,21 @@
+@import url(./popup__input-type-error/popup__input-type-error.css);
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #3498db; 
+}
+
+  .popup__container-input{
+    border: none;
+    border-bottom: 1px solid;
+    border-color: black;
+    color: black;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }

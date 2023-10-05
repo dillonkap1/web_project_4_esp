@@ -1,0 +1,15 @@
+.popup__button-save{
+    height: 50px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .popup__button-save:disabled{
+    background-color: white;
+    border: solid 1px gray;
+    color: gray;
+    cursor: default;
+  }

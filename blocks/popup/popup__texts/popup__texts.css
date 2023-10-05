@@ -1,0 +1,7 @@
+.popup__texts{
+    display: flex;
+    flex-direction: column;
+    border: none;
+    color: black;
+    position: relative;
+  }

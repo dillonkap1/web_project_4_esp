@@ -1,0 +1,25 @@
+.card__like, .card__like-dark{
+    position: absolute;
+    bottom: 30px;
+    right: 18px;
+    width: 21px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.card__like-dark{
+    display: block;
+  }
+  
+  .hide{
+    display: none;
+  }
+  
+  .show{
+    display: block;
+  }
+
+.card__like:hover, .card__like-dark:hover {
+    opacity: 0.7;
+  }
+  

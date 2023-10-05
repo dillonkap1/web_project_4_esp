@@ -1,0 +1,24 @@
+@import url(./popup__container-input/popup__container-input.css);
+@import url(./popup__container-images/popup__container-images.css);
+
+.popup__container{
+    margin:auto;
+    width: 430px;
+    height: 330px;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+    padding: 36px;
+    }
+  
+    @media screen and (max-width: 640px) {    
+        .popup__container{
+          width: 282px;
+          height: 322px;
+        }
+      }
+    

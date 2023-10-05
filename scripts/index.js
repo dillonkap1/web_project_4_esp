@@ -122,7 +122,6 @@ function closePopupPreviewImage() {
       }
     });
   }
-  
 
   const formValidationSettings = {
     inputSelector: ".popup__input",
