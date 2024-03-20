@@ -52,7 +52,7 @@
 .profile__button-edit{
     width: 24px;
     height: 24px;
-    background-image: url(/images/edit_button.svg);
+    background-image: url(../images/edit_button.svg);
     background-color: #000;
      margin: 30px 10px;
     border: 2px;
@@ -60,7 +60,7 @@
 }
 
 .profile__button-add{
-    background-image: url(/images/add_button.svg);
+    background-image: url(../images/add_button.svg);
     width: 150px;
     height: 50px;
     background-color: #000;

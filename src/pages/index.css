@@ -1,10 +1,10 @@
-@import url(/pages/normalize.css);
-@import url(/blocks/header/header.css);
-@import url(/blocks/profile.css);
-@import url(/blocks/elements/elements.css);
-@import url(/blocks/footer/footer.css);
-@import url(/blocks/popup/popup.css);
-@import url(/vendor/fonts/inter.css);
+@import url(../pages/normalize.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/profile.css);
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/popup/popup.css);
+@import url(../vendor/fonts/inter.css);
 
 body{
     background-color: black;
