@@ -19,4 +19,4 @@ El script proporciona las siguientes características:
 * Permite dar like a las fotos
 * Ampliar las imágenes a un popup
 
-_Proyecto despegado en Netlify:_ https://dazzling-cactus-75d950.netlify.app/
+_Proyecto despegado en GithubPages:_ https://dillonkap1.github.io/web_project_4_esp/
