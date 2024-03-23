@@ -19,7 +19,7 @@ export const titleInput = document.querySelector(".popup__input-title");
 export const imageUrlInput = document.querySelector(".popup__input-image");
 export const createNewPlaceButton = document.querySelector(".popup__button-create");
 
-import valleYosemite from "../images/valleYosemite.png";
+import valleYosemite from "../dist/valleYosemite.png";
 import washington from "../images/Washington.jpg";
 import newYork from "../images/newyork.jpg";
 import montanasCalvas from "../images/montanasCalvas.png";
