@@ -1,5 +1,5 @@
-import Popup from "./Popup";
-import {title, subtitle} from "./const"
+import Popup from "./Popup.js";
+import {title, subtitle} from "./const.js"
 
 export default class PopupWithForm extends Popup{
     constructor(popupSelector, submitCallback){
