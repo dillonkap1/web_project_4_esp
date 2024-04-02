@@ -505,7 +505,7 @@ template {
 .profile__button-edit{
     width: 24px;
     height: 24px;
-    background-image: url(images/edit_button.svg);
+    background-image: url(/images/edit_button.svg);
     background-color: #000;
      margin: 30px 10px;
     border: 2px;
@@ -513,7 +513,7 @@ template {
 }
 
 .profile__button-add{
-    background-image: url(images/add_button.svg);
+    background-image: url(/images/add_button.svg);
     width: 150px;
     height: 50px;
     background-color: #000;
@@ -853,8 +853,8 @@ input:focus {
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(images/Inter-Regular.woff2) format("woff2"),
-      url(images/Inter-Regular.woff) format("woff");
+    src: url(/images/Inter-Regular.woff2) format("woff2"),
+      url(/images/Inter-Regular.woff) format("woff");
   }
 
   @font-face {
@@ -862,8 +862,8 @@ input:focus {
     font-style: normal;
     font-weight: 500;
     font-display: swap;
-    src: url(images/Inter-Medium.woff2) format("woff2"),
-      url(images/Inter-Medium.woff) format("woff");
+    src: url(/images/Inter-Medium.woff2) format("woff2"),
+      url(/images/Inter-Medium.woff) format("woff");
   }
 
   @font-face {
@@ -871,8 +871,8 @@ input:focus {
     font-style: normal;
     font-weight: 900;
     font-display: swap;
-    src: url(images/Inter-Black.woff2) format("woff2"),
-      url(images/Inter-Black.woff) format("woff");
+    src: url(/images/Inter-Black.woff2) format("woff2"),
+      url(/images/Inter-Black.woff) format("woff");
   }
 
 body{background-color:#000;color:#fff;font-family:Inter;justify-content:center}.page,body{align-items:center;display:flex}.page{flex-direction:column}.content{padding-top:36px}@media screen and (max-width:1100px){.content{margin:0 140px}}@media screen and (max-width:850px){.content{margin:0 50px}}@media screen and (max-width:600px){.content{margin:0 10%}}
