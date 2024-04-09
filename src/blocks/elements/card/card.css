@@ -2,6 +2,7 @@
 @import url(./card__image/card__image.css);
 @import url(./card__like/card__like.css);
 @import url(./card__title/card__title.css);
+@import url(./card__likes/card__likes.css);
 
 .card{
     position: relative;

@@ -3,6 +3,7 @@
 @import url(./popup__title/popup__title.css);
 @import url(./popup__button-group/popup__button-group.css);
 @import url(./popup__img-container/popup__img-container.css);
+@import url(./popup_delete_card/popup_delete_card.css);
 
 
 .popup{

@@ -1,13 +1,13 @@
 import Popup from "./Popup.js";
 import {title, subtitle} from "./const.js"
 
-export default class PopupWithForm extends Popup{
-    constructor(popupSelector, submitCallback){
+export default class PopupWithForm extends Popup {
+    constructor(popupSelector, submitCallback) {
         super(popupSelector);
         this._submitCallback = submitCallback;
     }
 
-    _getInputValues(){
+    _getInputValues() {
         const form = this._popupElement.querySelector(".popup__form");
         const inputs = form.querySelectorAll(".popup__container-input");
         const values = {};
@@ -18,27 +18,26 @@ export default class PopupWithForm extends Popup{
         return values;
     }
 
-    setInputValues() {
+    setInputValues(data) {
         super.setEventListeners();
         const form = this._popupElement.querySelector(".popup__form");
         const inputs = form.querySelectorAll(".popup__container-input");
-        const inputName = inputs[0];
-        const inputJob = inputs[1];
-        inputName.value = title.textContent;
-        inputJob.value = subtitle.textContent;
+        inputs.forEach((input, index) => {
+            input.value = data[index];
+        });
     }
 
-    setEventListeners(){
+    setEventListeners() {
         super.setEventListeners();
         const form = this._popupElement.querySelector(".popup__form");
         form.addEventListener("submit", (evt) => {
             evt.preventDefault();
             this._submitCallback(this._getInputValues());
             this.close();
-        })
+        });
     }
 
-    close(){
+    close() {
         super.close();
         const form = this._popupElement.querySelector(".popup__form");
         form.reset();

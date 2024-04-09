@@ -10,12 +10,15 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "main.js",
-        publicPath: "" ,
+        publicPath: "/" ,
         clean: true
     },
     mode: "development",
     devServer: {
-        static: path.resolve(__dirname, "./src"),
+        static: [
+            { directory: path.resolve(__dirname, "./src") },
+            { directory: path.resolve(__dirname, "./dist") }
+        ],
         compress: true,
         port: 8080,
         open: true
@@ -48,7 +51,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./index.html"
+            template: path.resolve(__dirname, "index.html")
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin()

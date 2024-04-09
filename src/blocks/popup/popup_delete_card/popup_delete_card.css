@@ -1,0 +1,26 @@
+.popup__container-delete-card {
+    margin: auto;
+    width: 430px;
+    height: 181px;
+    color: black;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 36px;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+.popup__button-delete{
+    width: 96%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    margin: auto;
+}
+
+.popup__confirmation-text{
+    font-size: 24px;
+    font-weight: 900;
+}
