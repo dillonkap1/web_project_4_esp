@@ -1,5 +1,5 @@
 import Popup from "./Popup.js";
-import {title, subtitle} from "./const.js"
+import { título, subtítulo } from "./const.js";
 
 export default class PopupWithForm extends Popup {
     constructor(popupSelector, submitCallback) {
@@ -10,23 +10,28 @@ export default class PopupWithForm extends Popup {
     _getInputValues() {
         const form = this._popupElement.querySelector(".popup__form");
         const inputs = form.querySelectorAll(".popup__container-input");
-        const values = {};
+        const valores = {};
 
         inputs.forEach((input) => {
-            values[input.name] = input.value;
+            valores[input.name] = input.value;
         });
-        return values;
+        console.log("Datos recogidos:", valores);
+        return valores;
+
     }
 
     setInputValues(data) {
-        super.setEventListeners();
-        const form = this._popupElement.querySelector(".popup__form");
-        const inputs = form.querySelectorAll(".popup__container-input");
-        inputs.forEach((input, index) => {
-            input.value = data[index];
-        });
+        if (data && data.length > 0) {
+            const form = this._popupElement.querySelector(".popup__form");
+            const inputs = form.querySelectorAll(".popup__container-input");
+            inputs.forEach((input, index) => {
+                if (data[index]) {
+                    input.value = data[index];
+                }
+            });
+        }
     }
-
+    
     setEventListeners() {
         super.setEventListeners();
         const form = this._popupElement.querySelector(".popup__form");

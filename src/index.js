@@ -143,19 +143,26 @@ const cardSection = new Section(
 );
 
 function addNewCard(data, cardSection) {
+    console.log("Añadiendo nueva tarjeta...");
+    console.log("Datos recibidos:", data);
+
     fetch("https://around.nomoreparties.co/v1/web_es_11/cards", {
         method: "POST",
         headers: {
             authorization: "aeb303a7-85a3-41cc-b9b3-71f2eddd73ac",
-            "Content-Type": "application/json" // Añadir Content-Type
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
             name: data.name,
             link: data.link
         })
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log("Respuesta recibida:", response);
+        return response.json();
+    })
     .then(newCard => {
+        console.log("Nueva tarjeta creada:", newCard);
         const card = new Card(
             newCard.name,
             newCard.link,
@@ -163,15 +170,21 @@ function addNewCard(data, cardSection) {
             function () {
                 imagePopup.open(newCard.link, newCard.name);
             },
-            newCard.likes, // Pasar los likes de la nueva tarjeta
-            newCard._id // Pasar el ID de la nueva tarjeta
+            newCard.likes,
+            newCard._id
         );
         const cardElement = card.generateCard();
-        cardSection.addItem(cardElement);
-        addPopup.close(); // Opcional: cierra el popup después de agregar la tarjeta
+        const cardSection = document.querySelector('.elements');
+        const firstCard = cardSection.querySelector('.card');
+        cardSection.insertBefore(cardElement, firstCard);
+        addPopup.close();
     })
-    .catch(error => console.error('Error al agregar la tarjeta:', error));
+    .catch(error => {
+        console.error('Error al agregar la tarjeta:', error);
+        console.log('Error:', error.message);
+    });
 }
+
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Opening PopupWithConfirmation...");
