@@ -7,6 +7,7 @@ import PopupWithImage from "./components/PopupWithImage.js"
 import FormValidator from "./components/FormValidator.js"
 import "./pages/index.css";
 import PopupWithConfirmation from "./components/PopupWithConfirmation.js"
+import ChangeAvatarPopup from "./components/ChangeAvatarPopup.js"
 
 const formValidationSettings = {
     inputSelector: ".popup__input",
@@ -36,15 +37,52 @@ function fetchInitialCards() {
     })
     .then(res =>  res.json())
     .then(cards => {
+        console.log("Tarjetas recuperadas:", cards);
         return cards.map(card => {
             return {
                 name: card.name,
                 link: card.link,
-                likes: card.likes.length
+                likes: card.likes.length,
+                _id: card._id
             }
         });
     });
 }
+
+
+const confirmationPopup = new PopupWithConfirmation('.popup_delete_card', handleDeleteConfirmation);
+
+function handleDeleteConfirmation(cardID) {
+    fetch(`https://around.nomoreparties.co/v1/web_es_11/cards/${cardID}`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': 'aeb303a7-85a3-41cc-b9b3-71f2eddd73ac',
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => {
+        if (response.ok) {
+            // Agregar una pausa antes de eliminar la tarjeta del DOM
+            setTimeout(() => {
+                const cardElement = document.getElementById(cardID);
+                if (cardElement) {
+                    cardElement.remove();
+                    console.log('Tarjeta eliminada exitosamente.');
+                } else {
+                    console.error('No se encontró la tarjeta en el DOM.');
+                }
+            }, 100); // Pausa de 100 milisegundos (ajusta según sea necesario)
+        } else {
+            throw new Error('Error al eliminar la tarjeta.');
+        }
+    })
+    .catch(error => {
+        console.error(error.message);
+    });
+}
+
+
+
 
 fetchInitialCards()
 .then(cards => {
@@ -60,15 +98,48 @@ fetchInitialCards()
                         () => {
                             imagePopup.open(data.link, data.name);
                         },
-                        data.likes // Pasar el número de "me gusta" como argumento
+                        data.likes
                     );
                     const cardElement = card.generateCard();
                     cardSection.addItem(cardElement);
+
+                    // Selección de botones dentro del renderer
+                    const deleteButtons = cardElement.querySelectorAll('.card__delete');
+                    deleteButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            console.log("Button clicked. Card ID:", data._id); // Agregar este console.log()
+                            confirmationPopup.open(data._id); // Pasar el _id de la tarjeta
+                        });
+                    });
                 }
             },
             ".elements"
         );
-        cardSection.renderer();// Pasar cardSection como argumento
+        
+        cardSection.renderer((data) => {
+            const card = new Card(
+                data.name,
+                data.link,
+                "#cardTemplate",
+                () => {
+                    imagePopup.open(data.link, data.name);
+                },
+                data.likes,
+                data._id
+            );
+            const cardElement = card.generateCard();
+            cardSection.addItem(cardElement);
+            const cardID = data._id
+        
+            // Selección de botones dentro del renderer
+            const deleteButtons = cardElement.querySelectorAll('.card__delete');
+            deleteButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    console.log("Button clicked");
+                    confirmationPopup.open(cardID);
+                });
+            });
+        });
     } else {
         console.error("El resultado de fetchInitialCards no es un array:", cards);
     }
@@ -76,6 +147,7 @@ fetchInitialCards()
 .catch(error => {
     console.error("Error fetching initial cards:", error);
 });
+
 
 const userInfo = new UserInfo(".profile__name", ".profile__text", ".profile__image");
 
@@ -113,19 +185,19 @@ const profilePopupForm = new PopupWithForm(".popup-edit", (formData) => {
     .then(updatedUserData => {
         console.log("Perfil actualizado:", updatedUserData);
         userInfo.setUserInfo(updatedUserData);
-        profilePopupForm.close(); // Opcional: cierra el popup después de enviar el formulario
+        profilePopupForm.close(); 
     })
     .catch(error => console.error('Error al actualizar el perfil:', error));
 });
 
 
 const addPopup = new PopupWithForm(".popup-add", (data) => {
-    addNewCard(data, cardSection); // Pasar cardSection como argumento
+    addNewCard(data, cardSection);
 });
 
 const cardSection = new Section(
     {
-        items: initialCards, // Suponiendo que initialCards está definido previamente
+        items: initialCards, 
         renderer: (data) => {
             const card = new Card(
                 data.name,
@@ -150,7 +222,11 @@ function addNewCard(data, cardSection) {
         method: "POST",
         headers: {
             authorization: "aeb303a7-85a3-41cc-b9b3-71f2eddd73ac",
+<<<<<<< HEAD
             "Content-Type": "application/json"
+=======
+            "Content-Type": "application/json" 
+>>>>>>> gh-pages
         },
         body: JSON.stringify({
             name: data.name,
@@ -185,21 +261,47 @@ function addNewCard(data, cardSection) {
     });
 }
 
+<<<<<<< HEAD
 
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Opening PopupWithConfirmation...");
     const deleteCardButtons = document.querySelectorAll(".card__delete");
     const deleteConfirmationPopup = new PopupWithConfirmation(".popup_delete_card");
+=======
+const handleAvatarUpdate = async (newAvatarLink) => {
+    try {
+      await fetch('https://around.nomoreparties.co/v1/web_es_11/users/me/avatar', {
+        method: 'PATCH',
+        headers: {
+            authorization: "aeb303a7-85a3-41cc-b9b3-71f2eddd73ac",
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          avatar: newAvatarLink
+        })
+      });
+  
 
-    deleteCardButtons.forEach(deleteButton => {
-        deleteButton.addEventListener("click", () => {
-            deleteConfirmationPopup.open();
-        });
-    });
-});
+      const profileImage = document.querySelector('.profile__image');
+      profileImage.src = newAvatarLink; 
+  
+      console.log('La imagen de perfil se ha actualizado correctamente.');
+    } catch (error) {
+      console.error('Error al actualizar la imagen de perfil:', error);
+    }
+  };
+  
+const changeAvatarPopup = new ChangeAvatarPopup(".popup-edit-avatar", handleAvatarUpdate);
+changeAvatarPopup.setEventListeners();
+
+const avatarEditButton = document.querySelector(".profile__edit")
+avatarEditButton.addEventListener("click", () => changeAvatarPopup.open());
+>>>>>>> gh-pages
+
 
 const editProfileFormValidator = new FormValidator(formValidationSettings, document.querySelector(".popup-edit form"));
 editProfileFormValidator.enableValidation();
 
 const addCardFormValidator = new FormValidator(formValidationSettings, document.querySelector(".popup-add form"));
 addCardFormValidator.enableValidation();
+

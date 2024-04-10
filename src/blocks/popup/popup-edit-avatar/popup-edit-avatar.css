@@ -1,0 +1,13 @@
+.popup__container-avatar{
+    display: flex;
+    flex-direction: column;
+    width: 430px;
+    height: 272px;
+    text-align: left;
+    position: relative;
+    justify-content: space-between;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 36px;
+}
