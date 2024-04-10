@@ -16,6 +16,9 @@
       <div class="profile">
         <div class="profile__avatar">
           <img class="profile__image" src="images/avatar_profile.png" alt="Foto de perfil">
+          <div class="profile__overlay">
+            <img class="profile__edit" src="images/edit_avatar.svg" alt="Editar avatar">
+          </div>
         </div>
         <div class="profile__info">
           <h2 class="profile__name">Jacques Cousteau</h2>
@@ -44,9 +47,9 @@
           <form class="popup__container popup__form">
             <fieldset class="popup__texts">
               <h3 class="popup__title">Nuevo Lugar</h3>
-              <input type="text" placeholder="Título" class="popup__container-input popup__input-title popup__input" id="titleNewPlace" required minlength="2" maxlength="30">
+              <input type="text" name="name" placeholder="Título" class="popup__container-input popup__input-title popup__input" id="titleNewPlace" required minlength="2" maxlength="30">
               <p id="titleNewPlace-error" class="popup__error"></p>
-              <input type="url" placeholder="Enlace de la imagen" class="popup__container-input popup__input-image popup__input" id="imageUrl" required>
+              <input type="url" name="link" placeholder="Enlace de la imagen" class="popup__container-input popup__input-image popup__input" id="imageUrl" required>
               <p id="imageUrl-error" class="popup__error"></p>
               <button type="button" class="popup__button-close"><img src="images/Close_Icon.svg" alt="boton de cerrar"></button> 
             </fieldset>
@@ -55,6 +58,21 @@
             </fieldset>
           </form>
         </div>
+
+        <div class="popup popup-edit-avatar">
+          <form class="popup__container-avatar">
+            <fieldset class="popup__texts">
+              <p class="popup__confirmation-text">Cambiar foto de perfil</p>
+              <button type="button" class="popup__button-close"><img src="images/Close_Icon.svg" alt="boton de cerrar"></button>
+            </fieldset>
+            <fieldset class="popup__texts"></fieldset>
+            <input id="avatar_link" type="url" name="avatar_link" placeholder="Enlace de la imagen" class="popup__container-input popup__input-image popup__input" required>
+            <fieldset class="popup__button-group">
+              <button class="popup__button-save">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
+
       </div>
       <section class="elements">
         

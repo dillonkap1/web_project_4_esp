@@ -1,27 +1,26 @@
 import Popup from "./Popup";
 
 export default class PopupWithConfirmation extends Popup {
-    constructor(popupSelector) {
+    constructor(popupSelector, deleteCallback) {
         super(popupSelector);
-        this._handleDeleteButtonClick = this._handleDeleteButtonClick.bind(this);
-        this._handleCancelButtonClick = this._handleCancelButtonClick.bind(this);
+        this._deleteCallback = deleteCallback;
+        this._handleDelete = this._handleDelete.bind(this);
     }
 
-    open() {
-        super.open(); // Llamamos al método open de la clase base para configurar los listeners y otras tareas necesarias.
+    open(cardId) {
+        super.open();
+        this._cardId = cardId; // Guardamos el ID de la tarjeta
+        this._popupElement.querySelector('.popup__button-delete').addEventListener('click', this._handleDelete);
     }
 
     close() {
-        super.close(); // Llamamos al método close de la clase base para limpiar los listeners y otras tareas necesarias.
-
+        super.close();
+        this._popupElement.querySelector('.popup__button-delete').removeEventListener('click', this._handleDelete);
     }
 
-    _handleDeleteButtonClick() {
-        // Aquí podrías añadir la lógica para eliminar la tarjeta
-        this.close();
-    }
-
-    _handleCancelButtonClick() {
+    _handleDelete() {
+        // Llamamos al callback deleteCallback y pasamos el ID de la tarjeta
+        this._deleteCallback(this._cardId);
         this.close();
     }
 }
