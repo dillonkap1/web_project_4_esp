@@ -21,19 +21,6 @@ export default class PopupWithForm extends Popup {
     }
 
     setInputValues(data) {
-<<<<<<< HEAD
-        if (data && data.length > 0) {
-            const form = this._popupElement.querySelector(".popup__form");
-            const inputs = form.querySelectorAll(".popup__container-input");
-            inputs.forEach((input, index) => {
-                if (data[index]) {
-                    input.value = data[index];
-                }
-            });
-        }
-    }
-    
-=======
         super.setEventListeners();
         const form = this._popupElement.querySelector(".popup__form");
         const inputs = form.querySelectorAll(".popup__container-input");
@@ -56,7 +43,6 @@ export default class PopupWithForm extends Popup {
     }
     
 
->>>>>>> gh-pages
     setEventListeners() {
         super.setEventListeners();
         const form = this._popupElement.querySelector(".popup__form");

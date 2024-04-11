@@ -222,11 +222,7 @@ function addNewCard(data, cardSection) {
         method: "POST",
         headers: {
             authorization: "aeb303a7-85a3-41cc-b9b3-71f2eddd73ac",
-<<<<<<< HEAD
-            "Content-Type": "application/json"
-=======
             "Content-Type": "application/json" 
->>>>>>> gh-pages
         },
         body: JSON.stringify({
             name: data.name,
@@ -261,13 +257,6 @@ function addNewCard(data, cardSection) {
     });
 }
 
-<<<<<<< HEAD
-
-document.addEventListener("DOMContentLoaded", function() {
-    console.log("Opening PopupWithConfirmation...");
-    const deleteCardButtons = document.querySelectorAll(".card__delete");
-    const deleteConfirmationPopup = new PopupWithConfirmation(".popup_delete_card");
-=======
 const handleAvatarUpdate = async (newAvatarLink) => {
     try {
       await fetch('https://around.nomoreparties.co/v1/web_es_11/users/me/avatar', {
@@ -296,7 +285,6 @@ changeAvatarPopup.setEventListeners();
 
 const avatarEditButton = document.querySelector(".profile__edit")
 avatarEditButton.addEventListener("click", () => changeAvatarPopup.open());
->>>>>>> gh-pages
 
 
 const editProfileFormValidator = new FormValidator(formValidationSettings, document.querySelector(".popup-edit form"));
